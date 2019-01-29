@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import Navigation from './Components/Navigation/Navigation';
+import SignIn from './Components/SignIn/SignIn'
 import Logo from './Components/Logo/Logo'
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm'
 import Rank from './Components/Rank/Rank'
@@ -33,7 +34,8 @@ class App extends Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: {}
+      box: {},
+
     }
   }
 
@@ -74,8 +76,9 @@ class App extends Component {
     return (
       <div className="App">
       <Particles className='particles'
-      params={particlesOptions} />
+        params={particlesOptions} />
       <Navigation />
+      <SignIn />
       <Logo />
       <Rank  />
       <ImageLinkForm 
