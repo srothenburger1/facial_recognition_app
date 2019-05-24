@@ -8,15 +8,16 @@ class SignIn extends React.Component {
       signInPassword: ""
     };
   }
+  // update state
   onEmailChange = event => {
     this.setState({ signInEmail: event.target.value });
   };
   onPasswordChange = event => {
     this.setState({ signInPassword: event.target.value });
   };
-
+// fetch the info in a request format
   onSubmitSignIn = () => {
-    fetch("http://localhost:3000/signin", {
+    fetch("http://localhost:3001/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -24,7 +25,9 @@ class SignIn extends React.Component {
         password: this.state.signInPassword
       })
     })
+    // then take the response and turn it into json
       .then(response => response.json())
+
       .then(user => {
         if (user.id) {
           this.props.loadUser(user);

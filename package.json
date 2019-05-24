@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-loader": "^8.0.5",
     "clarifai": "^2.9.0",
     "cors": "^2.8.5",
     "react": "^16.7.0",
