@@ -23,7 +23,16 @@ class Register extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch("http://localhost:3000/register", {
+    console.log("register");
+    if(this.state.name === ''){
+      alert("Please Enter A Name")
+    }else if(this.state.email === ''){
+      alert("Please Enter An Email")
+    }else if(this.state.password === ''){
+      alert("Please Enter A Password")
+    }else{
+    
+    fetch("http://localhost:3001/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -36,9 +45,10 @@ class Register extends React.Component {
       .then(user => {
         if (user) {
           this.props.loadUser(user);
-          this.props.onRouteChange("home");
+          this.props.onRouteChange("signin");
         }
       });
+    }
   };
 
   render() {
@@ -70,6 +80,7 @@ class Register extends React.Component {
                   name="email-address"
                   id="email-address"
                   onChange={this.onEmailChange}
+                  required="required"
                 />
               </div>
               <div className="mv3">

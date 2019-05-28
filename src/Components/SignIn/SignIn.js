@@ -25,7 +25,6 @@ class SignIn extends React.Component {
         password: this.state.signInPassword
       })
     })
-    // then take the response and turn it into json
       .then(response => response.json())
 
       .then(user => {

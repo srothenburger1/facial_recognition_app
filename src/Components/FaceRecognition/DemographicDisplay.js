@@ -3,7 +3,7 @@ import './FaceRecognition.css';
 
 const DemographicDisplay = ({demographics}) => {
     let gender = null
-    demographics.gender.gender === "masculine" ? gender = "Male" : gender = "Female"
+    demographics.gender.gender === "masculine" ? gender = "male" : gender = "female"
     return (
 		<div>
 			

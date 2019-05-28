@@ -121,7 +121,20 @@ class App extends Component {
 
 	onRouteChange = route => {
 		if (route === 'signout') {
-			this.setState({ isSignedIn: false });
+      this.setState({ isSignedIn: false, imageUrl:'',demographics:{
+        age:{
+          age:'',
+          percentage:''
+        },
+        demographic:{
+          demographic:'',
+          percentage:''
+        },
+        gender:{
+          gender:'',
+          percentage:''
+        }
+      } });
 		} else if (route === 'home') {
 			this.setState({ isSignedIn: true });
 		}
