@@ -23,7 +23,6 @@ class Register extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    console.log("register");
     if(this.state.name === ''){
       alert("Please Enter A Name")
     }else if(this.state.email === ''){

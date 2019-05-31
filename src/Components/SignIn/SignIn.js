@@ -51,7 +51,7 @@ class SignIn extends React.Component {
                 </label>
                 
                 <input
-                  autocomplete="on"
+                  autoComplete="on"
                   className="white pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="email"
                   name="email-address"
@@ -64,7 +64,7 @@ class SignIn extends React.Component {
                   Password
                 </label>
                 <input
-                  autocomplete="on"
+                  autoComplete="on"
                   className="white b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="password"
                   name="password"
