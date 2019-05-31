@@ -111,6 +111,20 @@ class App extends Component {
 	};
 
 	onButtonSubmit = () => {
+		this.setState({ imageUrl:'',demographics:{
+			age:{
+				age:'',
+				percentage:''
+			},
+			demographic:{
+				demographic:'',
+				percentage:''
+			},
+			gender:{
+				gender:'',
+				percentage:''
+			}
+		} });
 		this.setState({ imageUrl: this.state.input });
 		app.models
 			.predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
@@ -141,6 +155,8 @@ class App extends Component {
 		this.setState({ route: route });
 	};
 
+	
+
 	render() {
 		const { isSignedIn, imageUrl, route, box,demographics } = this.state;
 		return (
@@ -151,7 +167,7 @@ class App extends Component {
 					<div>
 						<Logo />
 						{/* <Rank name={this.state.user.name} entries={this.state.user.entries} /> */}
-						<ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
+						<ImageLinkForm clearState = {this.clearState} onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
 						{demographics.age.age !== "" ? <DemographicDisplay demographics={demographics}/>: null}
             <FaceRecognition box={box} imageUrl={imageUrl} demographics={demographics} />
 					</div>

@@ -9,14 +9,13 @@ const DemographicDisplay = ({demographics}) => {
 			
 				<div>
 					<p>
-						Age: {demographics.age.age} at {Math.round(demographics.age.percentage)}% certainty
+						Age: {demographics.age.age} at a {Math.round(demographics.age.percentage)}% probability
 					</p>
 					<p>
-						Gender: {gender} at {Math.round(demographics.gender.percentage)}% certainty
+						Gender: {gender} at a {Math.round(demographics.gender.percentage)}% probability
 					</p>
 					<p>
-						Ethnicity: {demographics.demographic.demographic} at{' '}
-						{Math.round(demographics.demographic.percentage)}% certainty
+						Ethnicity: {demographics.demographic.demographic} at a {Math.round(demographics.demographic.percentage)}% probability
 					</p>
 				</div>
 			
