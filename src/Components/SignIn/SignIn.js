@@ -17,7 +17,7 @@ class SignIn extends React.Component {
   };
 // fetch the info in a request format
   onSubmitSignIn = () => {
-    fetch("http://localhost:3001/signin", {
+    fetch("https://whispering-beyond-55864.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

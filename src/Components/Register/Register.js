@@ -32,7 +32,7 @@ class Register extends React.Component {
       alert("Please Enter A Password")
     }else{
     
-    fetch("http://localhost:3001/register", {
+    fetch("https://whispering-beyond-55864.herokuapp.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
