@@ -1,11 +1,11 @@
 <h1 align="center">Welcome to Read My Face 👋</h1>
+### Link to [Server](https://github.com/srothenburger1/server)
 <p>
   <img src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
 > An app that uses facial recognition technologies to determine your demographic information.
 
-# Link to [Server](https://github.com/srothenburger1/server)
 
 ## Please be aware I am using free hosting from heroku, this means it can take up to several minutes to load this page. Sorry for the inconvenience.
 ### 🏠 [Homepage](readmyface.herokuapp.com)
