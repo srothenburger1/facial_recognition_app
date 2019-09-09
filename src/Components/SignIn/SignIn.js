@@ -8,7 +8,7 @@ class SignIn extends React.Component {
       signInPassword: ""
     };
   }
-  // update state
+
   onEmailChange = event => {
     this.setState({ signInEmail: event.target.value });
   };
@@ -17,7 +17,7 @@ class SignIn extends React.Component {
   };
 // fetch the info in a request format
   onSubmitSignIn = () => {
-    fetch("http://localhost:3001/signin", {
+    fetch("https://whispering-beyond-55864.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -51,7 +51,7 @@ class SignIn extends React.Component {
                 </label>
                 
                 <input
-                  autocomplete="on"
+                  autoComplete="on"
                   className="white pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="email"
                   name="email-address"
@@ -64,7 +64,7 @@ class SignIn extends React.Component {
                   Password
                 </label>
                 <input
-                  autocomplete="on"
+                  autoComplete="on"
                   className="white b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="password"
                   name="password"
