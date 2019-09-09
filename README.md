@@ -4,7 +4,8 @@
 </p>
 
 > An app that uses facial recognition technologies to determine your demographic information.
-> Link to [Server](https://github.com/srothenburger1/server)
+
+# Link to [Server](https://github.com/srothenburger1/server)
 
 ## Please be aware I am using free hosting from heroku, this means it can take up to several minutes to load this page. Sorry for the inconvenience.
 ### 🏠 [Homepage](readmyface.herokuapp.com)
