@@ -10,10 +10,10 @@ import DemographicDisplay from './Components/FaceRecognition/DemographicDisplay'
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import 'tachyons';
 import './App.css';
-
+const apiKey = process.env.API_KEY;
 
 const app = new Clarifai.App({
-	apiKey: process.env.API_KEY,
+	apiKey: apiKey,
 });
 
 const particlesOptions = {
