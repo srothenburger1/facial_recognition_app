@@ -8,7 +8,7 @@ class SignIn extends React.Component {
       signInPassword: ""
     };
   }
-  // update state
+
   onEmailChange = event => {
     this.setState({ signInEmail: event.target.value });
   };

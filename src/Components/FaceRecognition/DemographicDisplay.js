@@ -6,7 +6,7 @@ const DemographicDisplay = ({demographics}) => {
     demographics.gender.gender === "masculine" ? gender = "male" : gender = "female"
     return (
 		<div>
-			
+			{/* The returned numbers are a bit too long, so they get rounded */}
 				<div>
 					<p>
 						Age: {demographics.age.age} at a {Math.round(demographics.age.percentage)}% probability
@@ -15,6 +15,7 @@ const DemographicDisplay = ({demographics}) => {
 						Gender: {gender} at a {Math.round(demographics.gender.percentage)}% probability
 					</p>
 					<p>
+					
 						Ethnicity: {demographics.demographic.demographic} at a {Math.round(demographics.demographic.percentage)}% probability
 					</p>
 				</div>
