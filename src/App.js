@@ -10,10 +10,11 @@ import DemographicDisplay from './Components/FaceRecognition/DemographicDisplay'
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import 'tachyons';
 import './App.css';
-const apiKey = process.env.API_KEY;
 
+
+// Turns out that this is the way Clarifai recommends your use your API Key
 const app = new Clarifai.App({
-	apiKey: apiKey,
+	apiKey: "78dc783dbd924834a8831d6d029649ef",
 });
 
 const particlesOptions = {
