@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 
-const CLIENT_ID = '<your Client ID>';
+const CLIENT_ID = '612399434984-3bqm9gges27tses3f8vtub8111th9818.apps.googleusercontent.com';
 
 
 class GoogleBtn extends Component {
@@ -22,12 +22,13 @@ class GoogleBtn extends Component {
   }
 
   login (response) {
-    if(response.Zi.access_token){
-      this.setState(state => ({
-        isLogined: true,
-        accessToken: response.Zi.access_token
-      }));
-    }
+    // if(response.Zi.access_token){
+    //   this.setState(state => ({
+    //     isLogined: true,
+    //     accessToken: response.Zi.access_token
+    //   }));
+    // }
+    console.log(response)
   }
 
   logout (response) {
@@ -50,13 +51,13 @@ class GoogleBtn extends Component {
     <div>
       { this.state.isLogined ?
         <GoogleLogout
-          clientId={ "612399434984-3bqm9gges27tses3f8vtub8111th9818.apps.googleusercontent.com" }
+          clientId={ CLIENT_ID }
           buttonText='Logout'
           onLogoutSuccess={ this.logout }
           onFailure={ this.handleLogoutFailure }
         >
         </GoogleLogout>: <GoogleLogin
-          clientId={"612399434984-3bqm9gges27tses3f8vtub8111th9818.apps.googleusercontent.com"}
+          clientId={CLIENT_ID}
           buttonText='Login'
           onSuccess={ this.login }
           onFailure={ this.handleLoginFailure }
