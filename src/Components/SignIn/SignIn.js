@@ -1,4 +1,5 @@
 import React from "react";
+import GoogleBtn from "./GoogleSignin";
 
 
 class SignIn extends React.Component {
@@ -59,9 +60,6 @@ class SignIn extends React.Component {
                 <label className="db fw6 lh-copy f6" htmlFor="email-address">
                   Email
                 </label>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-                
                 <input
                   autoComplete="on"
                   className="white pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
@@ -94,6 +92,7 @@ class SignIn extends React.Component {
                 value="Sign in"
               />
             </div>
+            <GoogleBtn/>
             <div className="lh-copy mt3">
               <p
                 onClick={() => onRouteChange("register")}
