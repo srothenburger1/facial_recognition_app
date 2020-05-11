@@ -57,19 +57,7 @@ const CLIENT_ID = '612399434984-3bqm9gges27tses3f8vtub8111th9818.apps.googleuser
       token_type: "Bearer"
     }
     tokenId: really long string
-  }, ​​
-  disconnect: function disconnect()​​​​
-  getAuthResponse: function kk(a)​​
-  getBasicProfile: function eV()​​
-  getGrantedScopes: function GV()​​
-  getHostedDomain: function gB()​​
-  getId: function getId()​​
-  grant: function GW(a)​​
-  grantOfflineAccess: function Xq(a)​​
-  hasGrantedScopes: function xv(a)​​
-  isSignedIn: function Kf()​​
-  reloadAuthResponse: function TD()​​
-  update: function update(a)​​
+  }, 
 }
 */
 
@@ -79,7 +67,7 @@ class GoogleBtn extends Component {
     super(props);
 
     this.state = {
-      isLoggedIn: false,
+      isLogined: false,
       accessToken: ''
     };
 
@@ -90,19 +78,18 @@ class GoogleBtn extends Component {
   }
 
   login (response) {
-    if(response.tc.access_token){
-      this.setState(state => ({
-        isLoggedIn: true,
-        accessToken: response.tc.access_token
-      }));
-    }
-    Window.userInfo = response;
+    // if(response.tc.access_token){
+    //   this.setState(state => ({
+    //     isLogined: true,
+    //     accessToken: response.tc.access_token
+    //   }));
+    // }
     console.log(response)
   }
 
   logout (response) {
     this.setState(state => ({
-      isLoggedIn: false,
+      isLogined: false,
       accessToken: ''
     }));
   }
