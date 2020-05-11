@@ -1,6 +1,4 @@
 import React from "react";
-import GoogleBtn from "./GoogleSignin";
-
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -10,15 +8,6 @@ class SignIn extends React.Component {
       signInPassword: ""
     };
   }
-
-   onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  }
-  
 
   onEmailChange = event => {
     this.setState({ signInEmail: event.target.value });
@@ -60,6 +49,7 @@ class SignIn extends React.Component {
                 <label className="db fw6 lh-copy f6" htmlFor="email-address">
                   Email
                 </label>
+                
                 <input
                   autoComplete="on"
                   className="white pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
@@ -92,7 +82,6 @@ class SignIn extends React.Component {
                 value="Sign in"
               />
             </div>
-            <GoogleBtn/>
             <div className="lh-copy mt3">
               <p
                 onClick={() => onRouteChange("register")}
