@@ -57,7 +57,19 @@ const CLIENT_ID = '612399434984-3bqm9gges27tses3f8vtub8111th9818.apps.googleuser
       token_type: "Bearer"
     }
     tokenId: really long string
-  }, 
+  }, ​​
+  disconnect: function disconnect()​​​​
+  getAuthResponse: function kk(a)​​
+  getBasicProfile: function eV()​​
+  getGrantedScopes: function GV()​​
+  getHostedDomain: function gB()​​
+  getId: function getId()​​
+  grant: function GW(a)​​
+  grantOfflineAccess: function Xq(a)​​
+  hasGrantedScopes: function xv(a)​​
+  isSignedIn: function Kf()​​
+  reloadAuthResponse: function TD()​​
+  update: function update(a)​​
 }
 */
 
@@ -67,8 +79,13 @@ class GoogleBtn extends Component {
     super(props);
 
     this.state = {
-      isLogined: false,
-      accessToken: ''
+      isLoggedIn: false,
+      accessToken: null,
+      id: '',
+      firstName: '',
+      lastName:'',
+      emailAddress: '',
+      imageUrl: ''
     };
 
     this.login = this.login.bind(this);
@@ -78,18 +95,28 @@ class GoogleBtn extends Component {
   }
 
   login (response) {
-    // if(response.tc.access_token){
-    //   this.setState(state => ({
-    //     isLogined: true,
-    //     accessToken: response.tc.access_token
-    //   }));
-    // }
-    console.log(response)
+    if(response.access_token){
+      this.setState(state => ({
+        isLoggedIn: true,
+        accessToken: response.access_token,
+        firstName: ()=>{response.getBasicProfile().getGivenName()},
+        lastName: ()=>{response.getBasicProfile().getFamilyName()},
+        emailAddress: ()=>{response.getBasicProfile().getEmail()},
+        imageUrl: ()=>{response.getBasicProfile().getImageUrl()},
+        firstName: ()=>{response.getBasicProfile().getGivenName()},
+        id: ()=>{response.getBasicProfile().getId()}
+
+
+
+      }));
+    }
+    Window.userInfo = response;
+    // console.log(response)
   }
 
   logout (response) {
     this.setState(state => ({
-      isLogined: false,
+      isLoggedIn: false,
       accessToken: ''
     }));
   }
@@ -105,14 +132,16 @@ class GoogleBtn extends Component {
   render() {
     return (
     <div>
-      { this.state.isLogined ?
+      { this.state.isLoggedIn ?
         <GoogleLogout
           clientId={ CLIENT_ID }
           buttonText='Logout'
           onLogoutSuccess={ this.logout }
           onFailure={ this.handleLogoutFailure }
         >
-        </GoogleLogout>: <GoogleLogin
+        </GoogleLogout>
+        :
+        <GoogleLogin
           clientId={CLIENT_ID}
           buttonText='Login'
           onSuccess={ this.login }
@@ -121,8 +150,19 @@ class GoogleBtn extends Component {
           responseType='code,token'
         />
       }
-      { this.state.accessToken ? <h5>Your Access Token: <br/><br/> { this.state.accessToken }</h5> : null }
 
+
+
+      { this.state.accessToken ? 
+      
+      <>
+      <h5>{this.state.firstName}
+       {this.state.lastName} {this.state.emailAddress} </h5>
+       <br/>
+       <br/>
+        <image src={this.state.imageUrl}/> </>
+         : null }
+    
     </div>
     )
   }
